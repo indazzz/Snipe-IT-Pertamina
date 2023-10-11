@@ -49,7 +49,7 @@
 <body onload="window.print()">
     <div class="container">
         <header>
-            <img src="{{ asset('img/hulurokan.png') }}" class="logo_pertamina" alt="Logo Pertamina">
+            <img src="{{ asset('img/pertamina/pertamina-hulurokan.png') }}" class="logo_pertamina" alt="Logo Pertamina">
             <h1 class="judul">MANUFACTURES</h1>
         </header>
         <?php //dd($data_table);?>
