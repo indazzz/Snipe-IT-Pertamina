@@ -5,7 +5,7 @@
     <title>Labels</title>
 
 </head>
-<body>
+<body onload="window.print()">
 
 <?php
 $settings->labels_width = $settings->labels_width - $settings->labels_display_sgutter;
@@ -23,9 +23,7 @@ $qr_size = ($settings->alt_barcode_enabled=='1') && ($settings->alt_barcode!='')
         font-size: {{ $settings->labels_fontsize }}pt;
     }
     .label {
-        width: {{ $settings->labels_width }}in;
-        height: {{ $settings->labels_height }}in;
-        padding: 0in;
+        padding: .1in;
         margin-right: {{ $settings->labels_display_sgutter }}in; /* the gutter */
         margin-bottom: {{ $settings->labels_display_bgutter }}in;
         display: inline-block;
@@ -37,18 +35,16 @@ $qr_size = ($settings->alt_barcode_enabled=='1') && ($settings->alt_barcode!='')
     div.qr_img {
         width: {{ $qr_size }}in;
         height: {{ $qr_size }}in;
-
         float: left;
         display: inline-flex;
-        padding-right: .15in;
+        padding-bottom: .1in;
+        padding-right: .1in;
     }
     img.qr_img {
-
         width: 120.79%;
         height: 120.79%;
         margin-top: -6.9%;
         margin-left: -6.9%;
-        padding-bottom: .04in;
     }
     img.barcode {
         display:block;
@@ -58,9 +54,10 @@ $qr_size = ($settings->alt_barcode_enabled=='1') && ($settings->alt_barcode!='')
     div.label-logo {
         float: right;
         display: inline-block;
+        padding-left: .1in;
     }
     img.label-logo {
-        height: 0.5in;
+        height: 0.3in;
     }
     .qr_text {
         width: {{ $settings->labels_width }}in;
@@ -68,14 +65,12 @@ $qr_size = ($settings->alt_barcode_enabled=='1') && ($settings->alt_barcode!='')
         padding-top: {{$settings->labels_display_bgutter}}in;
         font-family: arial, helvetica, sans-serif;
         font-size: {{$settings->labels_fontsize}}pt;
-        padding-right: .0001in;
         overflow: hidden !important;
         display: inline;
         word-wrap: break-word;
         word-break: break-all;
     }
     div.barcode_container {
-
         width: 100%;
         display: inline;
         overflow: hidden;
