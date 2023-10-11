@@ -49,7 +49,7 @@
   <div class="col-lg-2 col-xs-6">
      <a href="{{ route('licenses.index') }}">
     <!-- small box -->
-    <div class="small-box bg-maroon">
+    <div class="small-box bg-light-blue">
       <div class="inner">
         <h3>{{ number_format($counts['license']) }}</h3>
         <p>{{ strtolower(trans('general.licenses')) }}</p>
@@ -68,7 +68,7 @@
   <div class="col-lg-2 col-xs-6">
     <!-- small box -->
       <a href="{{ route('accessories.index') }}">
-    <div class="small-box bg-orange">
+    <div class="small-box bg-purple">
       <div class="inner">
         <h3> {{ number_format($counts['accessory']) }}</h3>
         <p>{{ strtolower(trans('general.accessories')) }}</p>
@@ -87,7 +87,7 @@
     <!-- small box -->
 
       <a href="{{ route('consumables.index') }}">
-    <div class="small-box bg-purple">
+    <div class="small-box bg-maroon">
       <div class="inner">
         <h3> {{ number_format($counts['consumable']) }}</h3>
         <p>{{ strtolower(trans('general.consumables')) }}</p>
@@ -104,7 +104,7 @@
   <div class="col-lg-2 col-xs-6">
     <a href="{{ route('components.index') }}">
    <!-- small box -->
-   <div class="small-box bg-yellow">
+   <div class="small-box bg-orange">
      <div class="inner">
        <h3>{{ number_format($counts['component']) }}</h3>
        <p>{{ strtolower(trans('general.components')) }}</p>
@@ -122,7 +122,7 @@
  <div class="col-lg-2 col-xs-6">
     <a href="{{ route('users.index') }}">
    <!-- small box -->
-   <div class="small-box bg-light-blue">
+   <div class="small-box bg-yellow">
      <div class="inner">
        <h3>{{ number_format($counts['user']) }}</h3>
        <p>{{ strtolower(trans('general.people')) }}</p>
@@ -172,17 +172,17 @@
                         </div>
                         <div class="col-md-3">
                             @can('create', \App\Models\License::class)
-                                <a class="btn bg-maroon" style="width: 100%" href="{{ route('licenses.create') }}">{{ trans('general.new_license') }}</a>
+                                <a class="btn bg-light-blue" style="width: 100%" href="{{ route('licenses.create') }}">{{ trans('general.new_license') }}</a>
                             @endcan
                         </div>
                         <div class="col-md-3">
                             @can('create', \App\Models\Accessory::class)
-                                <a class="btn bg-orange" style="width: 100%" href="{{ route('accessories.create') }}">{{ trans('general.new_accessory') }}</a>
+                                <a class="btn bg-purple" style="width: 100%" href="{{ route('accessories.create') }}">{{ trans('general.new_accessory') }}</a>
                             @endcan
                         </div>
                         <div class="col-md-3">
                             @can('create', \App\Models\Consumable::class)
-                                <a class="btn bg-purple" style="width: 100%" href="{{ route('consumables.create') }}">{{ trans('general.new_consumable') }}</a>
+                                <a class="btn bg-maroon" style="width: 100%" href="{{ route('consumables.create') }}">{{ trans('general.new_consumable') }}</a>
                             @endcan
                         </div>
                     </div>

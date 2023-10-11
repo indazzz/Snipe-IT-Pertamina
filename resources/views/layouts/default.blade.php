@@ -104,18 +104,19 @@
                 <!-- Header Navbar: style can be found in header.less -->
                 <nav class="navbar navbar-static-top" role="navigation">
                     <!-- Sidebar toggle button above the compact sidenav -->
-                    <a href="#" style="color: white" class="sidebar-toggle btn btn-white" data-toggle="push-menu"
+                    <a href="#" style="color: white; background-color: rgba(0, 115, 86, 0.0)" class="sidebar-toggle btn btn-white" data-toggle="push-menu"
                        role="button">
                         <span class="sr-only">{{ trans('general.toggle_navigation') }}</span>
                     </a>
                     <div class="nav navbar-nav navbar-left">
                         <div class="left-navblock">
                             @if ($snipeSettings->brand == '3')
-                                <a class="logo navbar-brand no-hover" href="{{ config('app.url') }}">
+                                <a class="logo navbar-brand no-hover" style="color: #000000; font-weight: bold; font-size: 15px;" href="{{ config('app.url') }}">
                                     @if ($snipeSettings->logo!='')
                                         <img class="navbar-brand-img"
                                              src="{{ Storage::disk('public')->url($snipeSettings->logo) }}"
-                                             alt="{{ $snipeSettings->site_name }} logo">
+                                             alt="{{ $snipeSettings->site_name }} logo"
+                                             style="padding:3%; box-sizing: border-box;">
                                     @endif
                                     {{ $snipeSettings->site_name }}
                                 </a>
@@ -139,7 +140,7 @@
                     <!-- Navbar Right Menu -->
                     <div class="navbar-custom-menu">
                         <ul class="nav navbar-nav">
-                            @can('index', \App\Models\Asset::class)
+                            <!-- @can('index', \App\Models\Asset::class)
                                 <li aria-hidden="true"
                                     {!! (Request::is('hardware*') ? ' class="active"' : '') !!} tabindex="-1">
                                     <a href="{{ url('hardware') }}" accesskey="1" tabindex="-1">
@@ -181,7 +182,7 @@
                                         <span class="sr-only">{{ trans('general.components') }}</span>
                                     </a>
                                 </li>
-                            @endcan
+                            @endcan -->
 
                             @can('index', \App\Models\Asset::class)
                                 <li>
@@ -208,7 +209,7 @@
 
                             @can('admin')
                                 <li class="dropdown" aria-hidden="true">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown" tabindex="-1">
+                                    <a href="#" class="dropdown-toggle" style="color:#000000" data-toggle="dropdown" tabindex="-1">
                                         {{ trans('general.create') }}
                                         <strong class="caret"></strong>
                                     </a>
@@ -270,7 +271,7 @@
                                     <?php $alert_items = Helper::checkLowInventory(); ?>
 
                                     <li class="dropdown tasks-menu">
-                                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                        <a href="#" style="color:#000000" class="dropdown-toggle" data-toggle="dropdown">
                                             <i class="far fa-flag" aria-hidden="true"></i>
                                             <span class="sr-only">{{ trans('general.alerts') }}</span>
                                             @if (count($alert_items))
@@ -320,7 +321,7 @@
                             <!-- User Account: style can be found in dropdown.less -->
                             @if (Auth::check())
                                 <li class="dropdown user user-menu">
-                                    <a href="#" class="dropdown-toggle" data-toggle="dropdown">
+                                    <a href="#" style="color:#000000" class="dropdown-toggle" data-toggle="dropdown">
                                         @if (Auth::user()->present()->gravatar())
                                             <img src="{{ Auth::user()->present()->gravatar() }}" class="user-image"
                                                  alt="">
@@ -397,7 +398,7 @@
 
                             @can('superadmin')
                                 <li>
-                                    <a href="{{ route('settings.index') }}">
+                                    <a style="color:#000000" href="{{ route('settings.index') }}">
                                         <i class="fa fa-cogs fa-fw" aria-hidden="true"></i>
                                         <span class="sr-only">{{ trans('general.admin') }}</span>
                                     </a>
@@ -415,7 +416,7 @@
             </header>
 
             <!-- Left side column. contains the logo and sidebar -->
-            <aside class="main-sidebar">
+            <aside class="main-sidebar" style="background-color: #000000">
                 <!-- sidebar: style can be found in sidebar.less -->
                 <section class="sidebar">
                     <!-- sidebar menu: : style can be found in sidebar.less -->
@@ -531,7 +532,7 @@
                                         </li>
                                     @endcan
 
-                                    @can('checkout', \App\Models\Asset::class)
+                                    <!-- @can('checkout', \App\Models\Asset::class)
                                         <li{!! (Request::is('hardware/bulkcheckout') ? ' class="active"' : '') !!}>
                                             <a href="{{ route('hardware.bulkcheckout.show') }}">
                                                 {{ trans('general.bulk_checkout') }}
@@ -541,7 +542,7 @@
                                             <a href="{{ route('assets.requested') }}">
                                                 {{ trans('general.requested') }}</a>
                                         </li>
-                                    @endcan
+                                    @endcan -->
 
                                     @can('create', \App\Models\Asset::class)
                                         <li{!! (Request::query('Deleted') ? ' class="active"' : '') !!}>
@@ -555,7 +556,7 @@
                                             </a>
                                         </li>
                                     @endcan
-                                    @can('admin')
+                                    <!-- @can('admin')
                                         <li>
                                             <a href="{{ url('hardware/history') }}">
                                                 {{ trans('general.import-history') }}
@@ -568,7 +569,7 @@
                                                 {{ trans('general.bulkaudit') }}
                                             </a>
                                         </li>
-                                    @endcan
+                                    @endcan -->
                                 </ul>
                             </li>
                         @endcan
@@ -741,7 +742,7 @@
                                         <a href="{{ route('reports.audit') }}" {{ (Request::is('reports.audit') ? ' class="active"' : '') }}>
                                             {{ trans('general.audit_report') }}</a>
                                     </li>
-                                    <li>
+                                    <!-- <li>
                                         <a href="{{ url('reports/depreciation') }}" {{ (Request::is('reports/depreciation') ? ' class="active"' : '') }}>
                                             {{ trans('general.depreciation_report') }}
                                         </a>
@@ -770,19 +771,19 @@
                                         <a href="{{ url('reports/custom') }}" {{ (Request::is('reports/custom') ? ' class="active"' : '') }}>
                                             {{ trans('general.custom_report') }}
                                         </a>
-                                    </li>
+                                    </li> -->
                                 </ul>
                             </li>
                         @endcan
 
-                        @can('viewRequestable', \App\Models\Asset::class)
+                        <!-- @can('viewRequestable', \App\Models\Asset::class)
                             <li{!! (Request::is('account/requestable-assets') ? ' class="active"' : '') !!}>
                                 <a href="{{ route('requestable-assets') }}">
                                     <i class="fa fa-laptop fa-fw"></i>
                                     <span>{{ trans('admin/hardware/general.requestable') }}</span>
                                 </a>
                             </li>
-                        @endcan
+                        @endcan -->
 
 
                     </ul>
@@ -792,7 +793,7 @@
 
             <!-- Content Wrapper. Contains page content -->
 
-            <div class="content-wrapper" role="main" id="setting-list">
+            <div class="content-wrapper" style="background-color:#FFFFDD" role="main" id="setting-list">
                 <barepay></barepay>
 
                 @if ($debug_in_production)
