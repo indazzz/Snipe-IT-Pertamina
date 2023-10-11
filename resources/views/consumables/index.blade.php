@@ -20,6 +20,8 @@
 
     <div class="box box-default">
       <div class="box-body">
+        <!-- Report Button -->
+        <a href="{{ route('download.file', 'consumables') }}" class="btn btn-primary">Download File</a>
         <table
                 data-columns="{{ \App\Presenters\ConsumablePresenter::dataTableLayout() }}"
                 data-cookie-id-table="consumablesTable"

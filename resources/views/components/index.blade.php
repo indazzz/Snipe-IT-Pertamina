@@ -18,6 +18,8 @@
   <div class="col-md-12">
     <div class="box box-default">
       <div class="box-body">
+        <!-- Report Button -->
+        <a href="{{ route('download.file', 'components') }}" class="btn btn-primary">Download File</a>
         <table
                 data-columns="{{ \App\Presenters\ComponentPresenter::dataTableLayout() }}"
                 data-cookie-id-table="componentsTable"

@@ -21,7 +21,8 @@
     <div class="box box-default">
       <div class="box-body">
         <div class="table-responsive">
-
+            <!-- Report Button -->
+            <a href="{{ route('download.file', 'accessories') }}" class="btn btn-primary">Download File</a>
             <table
                 data-columns="{{ \App\Presenters\AccessoryPresenter::dataTableLayout() }}"
                 data-cookie-id-table="accessoriesTable"

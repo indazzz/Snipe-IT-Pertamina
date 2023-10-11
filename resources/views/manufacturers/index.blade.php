@@ -30,7 +30,8 @@
     <div class="box box-default">
       <div class="box-body">
         <div class="table-responsive">
-
+          <!-- Report Button -->
+          <a href="{{ route('download.file', 'manufacturers') }}" class="btn btn-primary">Download File</a>
           <table
             data-columns="{{ \App\Presenters\ManufacturerPresenter::dataTableLayout() }}"
             data-cookie-id-table="manufacturersTable"

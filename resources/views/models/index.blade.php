@@ -38,6 +38,8 @@
 
         @include('partials.models-bulk-actions')
               <div class="table-responsive">
+                <!-- Report Button -->
+                <a href="{{ route('download.file', 'models') }}" class="btn btn-primary">Download File</a>
                 <table
                         data-columns="{{ \App\Presenters\AssetModelPresenter::dataTableLayout() }}"
                         data-cookie-id-table="asssetModelsTable"
