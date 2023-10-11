@@ -14,6 +14,7 @@ use App\Http\Controllers\LabelsController;
 use App\Http\Controllers\LocationsController;
 use App\Http\Controllers\ManufacturersController;
 use App\Http\Controllers\ModalController;
+use App\Http\Controllers\PrintOutController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ReportsController;
 use App\Http\Controllers\SettingsController;
@@ -73,6 +74,12 @@ Route::group(['middleware' => 'auth'], function () {
     Route::resource('locations', LocationsController::class, [
         'parameters' => ['location' => 'location_id'],
     ]);
+
+        /*
+        * PrintOut
+        */
+        Route::get('/printout/download/{page}', [PrintOutController::class, 'index'])->name('download.file');
+
 
 
     /*
