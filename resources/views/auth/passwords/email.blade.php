@@ -27,13 +27,13 @@
 
             <div class="col-md-4 col-md-offset-4">
 
-                <div class="box login-box" style="width: 100%">
+                <div class="box login-box" style="background: rgba(255, 255, 255, 0.80); padding-bottom: 5%">
                         <div class="box-header with-border">
                             <h2 class="box-title"> {{ trans('auth/general.send_password_link')  }}</h2>
                         </div>
 
 
-                        <div class="login-box-body">
+                        <div style="padding:5%;">
                             <div class="row">
                                 <div class="col-md-12">
                                     <div class="alert alert-info">
@@ -84,10 +84,8 @@
 
                                 </div>
                             </div>
-                        </div>
 
-                        <div class="box-footer">
-                            <button type="submit" class="btn btn-lg btn-primary btn-block">
+                            <button type="submit" class="btn btn-lg btn-primary btn-block" style="margin-top:3%">
                                 {{ trans('auth/general.email_reset_password')  }}
                             </button>
                         </div>

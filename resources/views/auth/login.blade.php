@@ -17,13 +17,13 @@
 
                 <div class="col-md-4 col-md-offset-4">
 
-                    <div class="box login-box">
+                    <div class="box login-box" style="background: rgba(255, 255, 255, 0.80); padding-bottom: 15%">
                         <div class="box-header with-border">
                             <h1 class="box-title"> {{ trans('auth/general.login_prompt')  }}</h1>
                         </div>
 
 
-                        <div class="login-box-body">
+                        <div style="padding:5%;">
                             <div class="row">
 
                                 @if ($snipeSettings->login_note)
@@ -71,8 +71,7 @@
                                 </div>
                             </div>
                             @endif
-                        </div>
-                        <div class="box-footer">
+
                             @if (config('app.require_saml'))
                                 <a class="btn btn-primary btn-block" href="{{ route('saml.login')  }}">{{ trans('auth/general.saml_login')  }}</a>
                             @else
@@ -88,7 +87,6 @@
                                     <a href="{{ route('password.request')  }}">{{ trans('auth/general.forgot_password')  }}</a>
                                 </div>
                             @endif
-
                         </div>
 
                     </div> <!-- end login box -->

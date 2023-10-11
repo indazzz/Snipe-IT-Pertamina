@@ -39,7 +39,31 @@
         border-color: {{ $snipeSettings->header_color }};
         }
 
-
+        .logback{
+            max-width: 100%;
+            background-image: url({{ asset('img/pertamina/background.jpg') }});
+            background-size: cover;
+            position: relative;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            text-align: justify-all;
+            box-sizing: border-box;
+            line-height: 40px;
+        }
+        .logoptm{
+            max-width:20%;
+            padding:0;
+            padding-top:2%;
+        }
+        .tumpukan-form{
+            background: rgba(255, 255, 255, 0.70);
+            padding:0;
+        }
+        /* .kanan{
+            margin-left:35%;
+            padding:0;
+        } */
         </style>
     @endif
 
@@ -51,30 +75,32 @@
 
 </head>
 
-<body class="hold-transition login-page">
+<body class="hold-transition login-page logback" style="overflow-x: hidden;">
+    <div class="kanan">
+        @if (($snipeSettings) && ($snipeSettings->logo!=''))
+            <center>
+                <!-- <a href="{{ config('app.url') }}"><img id="login-logo" src="{{ Storage::disk('public')->url('').e($snipeSettings->logo) }}"></a> -->
+                <img class="logoptm" src="{{ asset('img/pertamina/pertamina.png') }}" alt="pertamina">
+            </center>
+        @endif
+        <!-- Content -->
+        @yield('content')
 
-    @if (($snipeSettings) && ($snipeSettings->logo!=''))
-        <center>
-            <a href="{{ config('app.url') }}"><img id="login-logo" src="{{ Storage::disk('public')->url('').e($snipeSettings->logo) }}"></a>
-        </center>
-    @endif
-  <!-- Content -->
-  @yield('content')
 
 
+        <div class="text-center" style="padding-top: 100px;">
+            @if (($snipeSettings) && ($snipeSettings->privacy_policy_link!=''))
+            <a target="_blank" rel="noopener" href="{{  $snipeSettings->privacy_policy_link }}" target="_new">{{ trans('admin/settings/general.privacy_policy') }}</a>
+        @endif
+        </div>
 
-    <div class="text-center" style="padding-top: 100px;">
-        @if (($snipeSettings) && ($snipeSettings->privacy_policy_link!=''))
-        <a target="_blank" rel="noopener" href="{{  $snipeSettings->privacy_policy_link }}" target="_new">{{ trans('admin/settings/general.privacy_policy') }}</a>
-    @endif
+        {{-- Javascript files --}}
+        <script src="{{ url(mix('js/dist/all.js')) }}" nonce="{{ csrf_token() }}"></script>
+
+
+        @stack('js')
+        @livewireScripts
     </div>
-
-    {{-- Javascript files --}}
-    <script src="{{ url(mix('js/dist/all.js')) }}" nonce="{{ csrf_token() }}"></script>
-
-
-    @stack('js')
-    @livewireScripts
 </body>
 
 </html>
